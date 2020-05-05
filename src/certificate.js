@@ -25,40 +25,40 @@ $$('.autocomplete button').forEach((button) => {
     }
     switch (person) {
       case 'papa':
-        profile.lastname = 'Cohen'
-        profile.firstname = 'Gilles'
-        profile.birthday = '24/11/1953'
-        profile.lieunaissance = 'Paris'
-        profile.address = '8 chemin du Garrigot'
-        profile.zipcode = '11200'
-        profile.town = 'Névian'
+        profile.lastname = process.env.papa_lastname
+        profile.firstname = process.env.papa_firstname
+        profile.birthday = process.env.papa_birthday
+        profile.lieunaissance = process.env.papa_lieunaissance
+        profile.address = process.env.papa_address
+        profile.zipcode = process.env.papa_zipcode
+        profile.town = process.env.papa_town
         break
       case 'maman':
-        profile.lastname = 'Cohen'
-        profile.firstname = 'Véronique'
-        profile.birthday = '06/06/1960'
-        profile.lieunaissance = 'Albi'
-        profile.address = '8 chemin du Garrigot'
-        profile.zipcode = '11200'
-        profile.town = 'Névian'
+        profile.lastname = process.env.maman_lastname
+        profile.firstname = process.env.maman_firstname
+        profile.birthday = process.env.maman_birthday
+        profile.lieunaissance = process.env.maman_lieunaissance
+        profile.address = process.env.maman_address
+        profile.zipcode = process.env.maman_zipcode
+        profile.town = process.env.maman_town
         break
       case 'allison':
-        profile.lastname = 'Stoecklin'
-        profile.firstname = 'Allison'
-        profile.birthday = '31/07/1993'
-        profile.lieunaissance = 'Cannes'
-        profile.address = '8 chemin du Garrigot'
-        profile.zipcode = '11200'
-        profile.town = 'Névian'
+        profile.lastname = process.env.allison_lastname
+        profile.firstname = process.env.allison_firstname
+        profile.birthday = process.env.allison_birthday
+        profile.lieunaissance = process.env.allison_lieunaissance
+        profile.address = process.env.allison_address
+        profile.zipcode = process.env.allison_zipcode
+        profile.town = process.env.allison_town
         break
       case 'steve':
-        profile.lastname = 'Cohen'
-        profile.firstname = 'Steve'
-        profile.birthday = '01/04/1992'
-        profile.lieunaissance = 'Narbonne'
-        profile.address = '8 chemin du Garrigot'
-        profile.zipcode = '11200'
-        profile.town = 'Névian'
+        profile.lastname = process.env.steve_lastname
+        profile.firstname = process.env.steve_firstname
+        profile.birthday = process.env.steve_birthday
+        profile.lieunaissance = process.env.steve_lieunaissance
+        profile.address = process.env.steve_address
+        profile.zipcode = process.env.steve_zipcode
+        profile.town = process.env.steve_town
         break
     }
     setProfile(profile)

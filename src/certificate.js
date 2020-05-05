@@ -10,6 +10,62 @@ import './icons'
 import { $, $$ } from './dom-utils'
 import pdfBase from './certificate.pdf'
 
+$$('.autocomplete button').forEach((button) => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault()
+    const person = button.getAttribute('name')
+    const profile = {
+      lastname: '',
+      firstname: '',
+      birthday: '',
+      lieunaissance: '',
+      address: '',
+      zipcode: '',
+      town: '',
+    }
+    switch (person) {
+      case 'papa':
+        profile.lastname = 'Cohen'
+        profile.firstname = 'Gilles'
+        profile.birthday = '24/11/1953'
+        profile.lieunaissance = 'Paris'
+        profile.address = '8 chemin du Garrigot'
+        profile.zipcode = '11200'
+        profile.town = 'Névian'
+        break
+      case 'maman':
+        profile.lastname = 'Cohen'
+        profile.firstname = 'Véronique'
+        profile.birthday = '06/06/1960'
+        profile.lieunaissance = 'Albi'
+        profile.address = '8 chemin du Garrigot'
+        profile.zipcode = '11200'
+        profile.town = 'Névian'
+        break
+      case 'allison':
+        profile.lastname = 'Stoecklin'
+        profile.firstname = 'Allison'
+        profile.birthday = '31/07/1993'
+        profile.lieunaissance = 'Cannes'
+        profile.address = '8 chemin du Garrigot'
+        profile.zipcode = '11200'
+        profile.town = 'Névian'
+        break
+      case 'steve':
+        profile.lastname = 'Cohen'
+        profile.firstname = 'Steve'
+        profile.birthday = '01/04/1992'
+        profile.lieunaissance = 'Narbonne'
+        profile.address = '8 chemin du Garrigot'
+        profile.zipcode = '11200'
+        profile.town = 'Névian'
+        break
+    }
+    setProfile(profile)
+  })
+})
+
+
 const generateQR = async (text) => {
   try {
     const opts = {
@@ -60,6 +116,12 @@ function getProfile () {
     }
   }
   return fields
+}
+
+function setProfile (profile) {
+  for (const [key, value] of Object.entries(profile)) {
+    $('#field-' + key).value = value
+  }
 }
 
 function idealFontSize (font, text, maxWidth, minSize, defaultSize) {
